@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="vi" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Speaking — Học tiếng Anh từ video bạn thích</title>
+  <meta name="description" content="Dán link YouTube, vài phút sau có bài học: chữ sáng theo lời nói, nghĩa tiếng Việt dưới từng từ, phiên âm IPA, ghi âm luyện nói. Cho người mới bắt đầu.">
+  <meta property="og:title" content="Speaking — Học tiếng Anh từ video bạn thích">
+  <meta property="og:description" content="Chữ sáng theo lời nói, nghĩa tiếng Việt dưới từng từ, luyện nói theo câu. Bản Android và bản web.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#14120f">
+  <link rel="icon" href="icons/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="trang.css?v=bd78b27fbb">
+  <script>
+    /* Before first paint, so a light-theme visitor never sees a dark flash. */
+    (function () {
+      var t = null;
+      try { t = localStorage.getItem("speaking-giao-dien"); } catch (e) { /* storage blocked */ }
+      if (t !== "light" && t !== "dark") t = window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+      document.documentElement.dataset.theme = t;
+    })();
+  </script>
+</head>
+<body data-trang-thai="dang-tai">
+  <div class="trang">
+    <header class="dau">
+      <a class="ten" href="./" aria-label="Speaking — trang chủ">
+        <span class="logo" aria-hidden="true">Ve</span>
+        <span>Speaking</span>
+      </a>
+      <nav class="dau-nut" aria-label="Trang">
+        <button type="button" class="nut-nho" id="btn-phien-ban" aria-haspopup="dialog" aria-controls="ngan-phien-ban">Phiên bản</button>
+        <button type="button" class="nut-nho nut-vuong" id="btn-giao-dien" aria-label="Đổi nền sáng / tối">
+          <svg class="icon-mat-troi" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+          <svg class="icon-mat-trang" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+        </button>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-chu">
+          <p class="kicker">Học tiếng Anh cho người mới bắt đầu · A0/A1</p>
+          <h1>Học tiếng Anh từ <em>video bạn thích</em>.</h1>
+          <p class="mo-ta">Dán link YouTube, vài phút sau có bài học: chữ sáng lên đúng lúc người nói, nghĩa tiếng Việt dưới từng từ, phiên âm IPA, và ghi âm giọng bạn để so với câu gốc.</p>
+          <div class="hero-nut">
+            <a class="nut nut-chinh" id="nut-android" aria-busy="true">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>
+              <span class="chu"><span class="nhan">Tải cho Android</span><span class="phu" id="android-phu">Đang hỏi GitHub…</span></span>
+            </a>
+            <a class="nut nut-vien" id="nut-web" rel="noopener">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>
+              <span class="chu"><span class="nhan">Mở bản web</span><span class="phu" id="web-phu">iPhone, máy tính</span></span>
+            </a>
+          </div>
+          <p class="ghi-nho">Android 7 trở lên, máy tính bảng và điện thoại. iPhone và máy tính dùng bản web, không cần cài.</p>
+        </div>
+
+        <figure class="hero-video">
+          <div class="khung-video">
+            <video id="video-gioi-thieu" src="media/gioi-thieu.mp4" poster="media/gioi-thieu.jpg"
+                   muted loop playsinline controls preload="metadata"
+                   aria-label="Video giới thiệu Speaking, 32 giây, không có tiếng"></video>
+          </div>
+          <figcaption>Video giới thiệu · 32 giây · không tiếng</figcaption>
+        </figure>
+      </section>
+
+      <section class="tinh-nang" aria-label="Tính năng">
+        <article class="the">
+          <h3>Nhập video</h3>
+          <p>Dán link YouTube hoặc chọn file trong máy. Máy chủ tự nghe, cắt câu ngắn, dịch và chú nghĩa từng từ.</p>
+        </article>
+        <article class="the">
+          <h3>Chữ sáng theo lời nói</h3>
+          <p>Từng từ sáng lên đúng lúc người trong video nói tới. Chạm một từ để xem nghĩa, phiên âm IPA và mẹo đọc.</p>
+        </article>
+        <article class="the">
+          <h3>Luyện nói theo câu</h3>
+          <p>Ghi âm giọng bạn cho từng câu rồi nghe ngay cạnh câu gốc. Tua chậm 0.5x, lặp một câu bao nhiêu lần cũng được.</p>
+        </article>
+        <article class="the">
+          <h3>Ôn tập, học offline</h3>
+          <p>Lưu từ vào sổ, app nhắc ôn đúng lúc sắp quên. Tải bài về máy để học cả khi không có mạng.</p>
+        </article>
+      </section>
+
+      <section class="cai-dat" id="cai-dat" aria-labelledby="tieu-de-cai-dat">
+        <h2 id="tieu-de-cai-dat">Cài đặt</h2>
+        <div class="luoi">
+          <article class="the">
+            <h3>Android <span class="nhan-nho">máy tính bảng, điện thoại</span></h3>
+            <ol>
+              <li>Mở trang này bằng <strong>Chrome</strong>, bấm <strong>Tải cho Android</strong>.</li>
+              <li>Mở file vừa tải. Lần đầu Android hỏi quyền <em>Cài ứng dụng không xác định</em> cho Chrome: cho phép, rồi bấm <strong>Cài đặt</strong>.</li>
+              <li>Mở <strong>Speaking</strong>. Địa chỉ máy chủ đã điền sẵn trong <strong>Cài đặt › Máy chủ</strong>.</li>
+              <li>Bản mới: <strong>Cài đặt › Kiểm tra bản mới</strong> trong app. Bài đã tải về máy giữ nguyên.</li>
+            </ol>
+          </article>
+          <article class="the">
+            <h3>iPhone <span class="nhan-nho">bản web trên Màn hình chính</span></h3>
+            <ol>
+              <li>Mở <span data-khi-co-web><a class="dia-chi-web url" rel="noopener"></a></span><span data-khi-chua-co-web>bản web</span> bằng <strong>Safari</strong>.</li>
+              <li>Bấm <strong>Chia sẻ</strong> › <strong>Thêm vào MH chính</strong> › <strong>Thêm</strong>.</li>
+              <li>Từ giờ mở bằng biểu tượng <strong>Speaking</strong>: toàn màn hình, không thanh địa chỉ.</li>
+            </ol>
+            <p class="ghi-nho" data-khi-co-web>Ghi âm và học offline trên iPhone cần kết nối HTTPS. Làm một lần theo mục iPhone ở <a id="link-cai-dat-may-chu" rel="noopener">trang cài của máy chủ</a>.</p>
+            <p class="ghi-nho" data-khi-chua-co-web>Bản web chưa có địa chỉ công khai; địa chỉ sẽ hiện ở đây khi máy chủ có tên miền.</p>
+          </article>
+          <article class="the">
+            <h3>Máy tính <span class="nhan-nho">trình duyệt</span></h3>
+            <ol>
+              <li>Mở <span data-khi-co-web><a class="dia-chi-web url" rel="noopener"></a></span><span data-khi-chua-co-web>bản web (địa chỉ công khai sắp có)</span> bằng Chrome, Safari hoặc Edge. Không cài gì.</li>
+              <li>Phím tắt: <kbd>Space</kbd> phát/dừng, <kbd>←</kbd> <kbd>→</kbd> câu trước/sau, <kbd>R</kbd> lặp câu.</li>
+            </ol>
+          </article>
+        </div>
+
+        <article class="the the-luu-y">
+          <h3>Đọc trước khi cài</h3>
+          <ul>
+            <li><strong>Máy chủ hiện chỉ mở trong mạng nội bộ.</strong> Bản web và việc nhập bài mới chỉ dùng được trong mạng đó; địa chỉ công khai sắp có. Bài đã tải về máy thì học ở đâu cũng được.</li>
+            <li><strong>Bản Android không qua Play Store.</strong> Nó được ký bằng khoá riêng của người làm app; Android chỉ nhận bản cập nhật ký cùng khoá với bản đang cài. Mã sha256 của từng file có trên trang <a id="link-releases-luu-y" rel="noopener">Releases</a> của GitHub.</li>
+            <li><strong>Không tài khoản, không quảng cáo.</strong> Bài học và từ đã lưu nằm trên máy chủ; bài đã tải về và bản ghi âm nằm trong máy bạn.</li>
+          </ul>
+        </article>
+      </section>
+    </main>
+
+    <footer class="cuoi">
+      <p><strong>Speaking</strong> · bản <span id="phien-ban-cuoi">…</span> · <a id="link-releases" rel="noopener">Các bản trên GitHub</a></p>
+      <p>Bài học mẫu trong video: TED, Joshua Johnson — “Idiots Are Everywhere. Here’s How to Cope”, giấy phép CC BY-NC-ND 4.0.</p>
+    </footer>
+  </div>
+
+  <div class="man" id="ngan-phien-ban" role="dialog" aria-modal="true" aria-labelledby="tieu-de-phien-ban" hidden>
+    <div class="ngan">
+      <div class="ngan-dau">
+        <h2 id="tieu-de-phien-ban">Phiên bản</h2>
+        <button type="button" class="nut-nho nut-vuong" data-dong aria-label="Đóng">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>
+        </button>
+      </div>
+      <div class="ds-phien-ban" id="ds-phien-ban"></div>
+    </div>
+  </div>
+
+  <script src="cau-hinh.js?v=844db845c0"></script>
+  <script src="trang.js?v=9cf283544e"></script>
+</body>
+</html>
